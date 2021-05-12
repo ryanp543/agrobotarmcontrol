@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find agrobot_arm_v2)/urdf/agrobot_arm_v2.urdf'"/>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+    <node name="rviz" pkg="rviz" type="rviz" args=" -d $(find agrobot_arm_v2)/launch/config.rviz" />
+
+    <node name="rviz_start" pkg="agrobot_arm_v2" type="rviz_start.py" output="screen" cwd="node">
+    	<param name="get_rviz_data" value="True"/>
+    </node>    
+
+    <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+        <param name="use_gui" value="True"/> -->
+
+</launch>
+
+

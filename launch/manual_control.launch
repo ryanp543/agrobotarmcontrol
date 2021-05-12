@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+    <!-- FOR SIMULATION ONLY -->
+    <!-- <include file="$(find agrobot_arm_v2)/launch/gazebo.launch" /> -->
+
+    <!-- FOR EXPERIMENTATION ONLY -->
+    <node name="motor_controller_manual" pkg="agrobot_arm_v2" type="motor_controller_manual.py" output="screen"/>
+    <node name="tool_changer" pkg="agrobot_arm_v2" type="tool_changer.py" output="screen"/>
+
+    <node name="manual_control" pkg="agrobot_arm_v2" type="manual_control.py" output="screen"/>
+
+</launch>
+
+
